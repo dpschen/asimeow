@@ -38,9 +38,11 @@ cargo fmt --all -- --check
 - Commit message body should contain _why_, not _how_.
 
 ## 💡 Coding conventions
-- Use iterator adapters over manual loops where practical.  
-- Prefer `&Path`/`&PathBuf` over `String` for file paths.  
+- Use iterator adapters over manual loops where practical.
+- Prefer `&Path`/`&PathBuf` over `String` for file paths.
 - All public APIs require doc comments (`/// …`).
+- Prefer simple code; avoid extra layers.
+- Duplication OK when clearer than abstraction.
 
 ## 🪤 Common pitfalls
 - `explorer::State` uses `RwLock`; avoid dead-locks by keeping critical sections small.  
