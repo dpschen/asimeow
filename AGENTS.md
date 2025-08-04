@@ -32,20 +32,17 @@ cargo clippy --workspace --all-features -- -D warnings
 cargo fmt --all -- --check
 ```
 
-## ✍️ Commit & PR style
-- Follow **Conventional Commits** (`feat:`, `fix:`, `chore:`).  
-- One logical change per commit; squash-merge is OK.  
-- Commit message body should contain _why_, not _how_.
-
-## 💡 Coding conventions
-- Use iterator adapters over manual loops where practical.  
-- Prefer `&Path`/`&PathBuf` over `String` for file paths.  
-- All public APIs require doc comments (`/// …`).
+## ✍️ Commit, PR & code style
+See [CONTRIBUTING.md](CONTRIBUTING.md) for commit and pull request guidelines and coding conventions.
 
 ## 🪤 Common pitfalls
-- `explorer::State` uses `RwLock`; avoid dead-locks by keeping critical sections small.  
-- Tests run on Linux CI; direct calls to `tmutil` must be behind `#[cfg(target_os = "macos")]`.  
+- `explorer::State` uses `RwLock`; avoid dead-locks by keeping critical sections small.
+- Tests run on Linux CI; direct calls to `tmutil` must be behind `#[cfg(target_os = "macos")]`.
 - The default config file lives in `~/.config/asimeow/config.yaml`; use `expand_tilde` helper.
+
+## 📚 Additional docs
+- [Changelog](CHANGELOG.md)
+- [Homebrew tap setup](_docs/HOMEBREW_TAP_SETUP.md)
 
 ## 🤝 Reviewer checklist (for Codex and humans)
 - [ ] Tests & clippy pass  
